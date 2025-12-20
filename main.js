@@ -15,7 +15,7 @@ const maintenance = document.getElementById('maintenance');
 
 // Show maintenance automatically when the page loads
 window.addEventListener('load', () => {
-    maintenance.style.display = 'none';
+    maintenance.style.display = 'block';
 });
 
 /* ======================================================
