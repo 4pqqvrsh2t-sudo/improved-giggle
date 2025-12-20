@@ -422,5 +422,14 @@ body::before {
 
   color: white;
   text-align: center;
+  font-family: 'xxx', sans-serif;
+}
+#maintenanceStatus {
+  position: relative;
+  #maintenance-text {
+  position: relative;
+  top: 20px;   /* moves DOWN */
+  left: 0px;    /* moves (+)RIGHT/LEFT(-) */
+
 }
 
