@@ -434,7 +434,18 @@ body::before {
   position: relative;
   top: 280px;  /* moves (+)DOWN/UP(-) */
 }
-
+#retryAccess button {
+  background: transparent;
+  border: 2px solid #4fa3ff;
+  color: #4fa3ff;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-family: inherit;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
 #adminBypass {
   position: relative;
   top: 260px;  /* moves (+)DOWN/UP(-) */
