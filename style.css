@@ -452,7 +452,8 @@ body::before {
 #maintenance-face {
   font-size: 96px;
   color: #cfd8e3;
-
+  top: 40px;
+  left: 0px;
   text-shadow:
     1px 1px 0 rgba(0,0,0,0.6),
    -1px -1px 0 rgba(255,255,255,0.1);
