@@ -435,8 +435,8 @@ body::before {
   top: 280px;  /* moves (+)DOWN/UP(-) */
   left: 0px;    /* moves (+)RIGHT/LEFT(-) */
   background: transparent;
-  border: 2px solid #4fa3ff;
-  color: #4fa3ff;
+  border: 2px solid #356fac;
+  color: #3e6a9a;
   padding: 12px 28px;
   font-size: 1rem;
   font-family: inherit;
