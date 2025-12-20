@@ -426,8 +426,6 @@ body::before {
 }
 #maintenanceStatus {
   position: relative;
-  #maintenance-text {
-  position: relative;
   top: -40px;   /* moves (-)DOWN/UP(+) */
   left: 0px;    /* moves (+)RIGHT/LEFT(-) */
 
