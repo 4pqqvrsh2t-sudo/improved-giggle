@@ -406,7 +406,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  display: none; /* still hidden */
+  display: block; /* still hidden */
   background-color: rgba(0, 0, 0, 0.8); /* optional for future use */
   z-index: 9999; /* ensures overlay is above everything */
 }
