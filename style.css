@@ -432,11 +432,11 @@ body::before {
 }
 #retryAccess {
   position: relative;
-  top: 260px;  /* moves (+)DOWN/UP(-) */
+  top: 280px;  /* moves (+)DOWN/UP(-) */
 }
 
 #adminBypass {
   position: relative;
-  top: 280px;  /* moves (+)DOWN/UP(-) */
+  top: 260px;  /* moves (+)DOWN/UP(-) */
 }
 
