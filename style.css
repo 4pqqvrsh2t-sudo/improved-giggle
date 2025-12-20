@@ -449,4 +449,12 @@ body::before {
   position: relative;
   top: 300px;  /* moves (+)DOWN/UP(-) */
 }
+#maintenance-face {
+  font-size: 96px;
+  color: #d7e6ff;
+
+  text-shadow:
+    0 0 6px rgba(79,163,255,0.6),
+    0 0 12px rgba(79,163,255,0.4);
+}
 
