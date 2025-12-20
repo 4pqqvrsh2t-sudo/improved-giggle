@@ -430,4 +430,13 @@ body::before {
   left: 0px;    /* moves (+)RIGHT/LEFT(-) */
 
 }
+#retryAccess {
+  position: relative;
+  top: 3600px;  /* moves (+)DOWN/UP(-) */
+}
+
+#adminBypass {
+  position: relative;
+  top: 380px;  /* moves (+)DOWN/UP(-) */
+}
 
