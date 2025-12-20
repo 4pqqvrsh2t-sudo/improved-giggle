@@ -453,8 +453,8 @@ body::before {
   font-size: 96px;
   color: #cfd8e3;
   position: relative;
-  top: 40px;
-  left: 0px;
+  top: 100px;  /* moves (+)DOWN/UP(-) */
+  left: 0px;   /* moves (+)RIGHT/LEFT(-) */
   text-shadow:
     1px 1px 0 rgba(0,0,0,0.6),
    -1px -1px 0 rgba(255,255,255,0.1);
