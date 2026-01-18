@@ -461,8 +461,8 @@ body::before {
 }
 #retrySpinner {
   position: relative;
-   top: 280px;  /* moves (+)DOWN/UP(-) */
-  left: 100px;    /* moves (+)RIGHT/LEFT(-) */
+   top: -120px;  /* moves (+)DOWN/UP(-) */
+  left: 500px;    /* moves (+)RIGHT/LEFT(-) */
   width: 32px;
   height: 32px;
   margin-top: 12px;
