@@ -101,7 +101,7 @@ function openEditorForSection(pageId, tabId, sectionId){
   codeMode = false;
   editorContent.style.display = '';
   codeArea.style.display = 'none';
-  editorContent.value = section.content || '';
+  editorContent.innerHTML = section.content || '';
   editorModal.style.display = 'flex';
 }
 
@@ -113,7 +113,7 @@ function saveEditorChanges(close=false){
   const section = getSectionById(tab, sectionId);
   if(!section) return;
 
-  const newContent = codeMode ? codeArea.value : editorContent.value;
+  const newContent = codeMode ? codeArea.value : editorContent.innerHTML;
   section.content = newContent;
   savePagesToStorage(PAGES);
   loadPage(currentPageId);
@@ -123,7 +123,7 @@ function saveEditorChanges(close=false){
 
 function revertEditorChanges(){
   if(!editorState) return;
-  editorContent.value = editorState.originalContent;
+  editorContent.innerHTML = editorState.originalContent;
   codeArea.value = editorState.originalContent;
 }
 
@@ -137,12 +137,12 @@ function toggleCodeMode(){
   if(codeMode){
     codeArea.style.display = '';
     editorContent.style.display = 'none';
-    codeArea.value = editorContent.value;
+    codeArea.value = editorContent.innerHTML;
     codeModeBtn.textContent = 'Visual Mode';
   } else {
     codeArea.style.display = 'none';
     editorContent.style.display = '';
-    editorContent.value = codeArea.value;
+    editorContent.innerHTML = codeArea.value;
     codeModeBtn.textContent = 'Code Mode';
   }
 }
