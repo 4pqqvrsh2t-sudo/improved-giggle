@@ -463,11 +463,11 @@ body::before {
   position: relative;
    top: -120px;  /* moves (+)DOWN/UP(-) */
   left: 500px;    /* moves (+)RIGHT/LEFT(-) */
-  width: 123px;
+  width: 126px;
   height: 126px;
   margin-top: 12px;
-  border: 9px solid rgba(255,255,255,0.2);
-  border-top: 9px solid #cfd8e3;
+  border: 3px solid rgba(255,255,255,0.2);
+  border-top: 3px solid #cfd8e3;
   border-radius: 50%;
   animation: spin 1s linear infinite;
   display: none;
