@@ -250,8 +250,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- Admin Bypass ---
-  bypassBtn.addEventListener('click', () => {
-    maintenance.style.display = 'none';
-    if (app) app.style.display = 'block';
-  });
+bypassBtn.addEventListener('click', () => {
+  // Fully remove the maintenance overlay
+  maintenance.classList.add('hidden');
+  maintenance.style.pointerEvents = 'none';
+
+  // Re-enable the app
+  app.style.display = 'flex';
+
+  // Safety: unlock scrolling
+  document.body.style.overflow = 'auto';
+});
 });
