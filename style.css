@@ -472,10 +472,6 @@ body::before {
   animation: spin 1s linear infinite;
   display: none;
 }
-#maintenance.hidden {
-  display: none !important;
-  pointer-events: none !important;
-}
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
@@ -483,4 +479,7 @@ button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
-
+#maintenance.hidden {
+  display: none !important;
+  pointer-events: none !important;
+}
