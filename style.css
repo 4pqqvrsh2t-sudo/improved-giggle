@@ -463,8 +463,8 @@ body::before {
   position: relative;
    top: -120px;  /* moves (+)DOWN/UP(-) */
   left: 500px;    /* moves (+)RIGHT/LEFT(-) */
-  width: 32px;
-  height: 32px;
+  width: 96px;
+  height: 96px;
   margin-top: 12px;
   border: 3px solid rgba(255,255,255,0.2);
   border-top: 3px solid #cfd8e3;
