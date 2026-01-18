@@ -217,7 +217,7 @@ if(addTabBtn) addTabBtn.addEventListener('click', ()=>{
 PAGES = loadPagesFromStorage();
 if(PAGES.length>0) loadPage(PAGES[0].id);
 /* ======================================================
-   Maintenance Page Logic (Final, Single Source of Truth)
+   Maintenance Page Logic (Final, Locked Class Version)
    ====================================================== */
 document.addEventListener('DOMContentLoaded', () => {
   const maintenance = document.getElementById('maintenance');
@@ -228,6 +228,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const app = document.getElementById('app');
 
   if (!maintenance || !retryBtn || !bypassBtn) return;
+
+  // --- Show maintenance overlay on load ---
+  maintenance.style.display = 'flex';
+  if (app) app.classList.add('locked');
 
   // --- Retry Button ---
   retryBtn.addEventListener('click', () => {
@@ -251,13 +255,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Admin Bypass ---
   bypassBtn.addEventListener('click', () => {
-  console.log('BYPASS CLICKED');
+    console.log('BYPASS CLICKED');
 
-  maintenance.remove(); // ← physically removes it from the DOM
+    // Remove maintenance overlay
+    maintenance.remove();
 
-  app.style.display = 'flex';
-  app.style.pointerEvents = 'auto';
+    // Unlock the app
+    if (app) app.classList.remove('locked');
 
-  document.body.style.overflow = 'auto';
+    // Restore scrolling
+    document.body.style.overflow = 'auto';
+  });
 });
-});
+

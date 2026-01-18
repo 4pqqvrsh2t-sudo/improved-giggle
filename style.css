@@ -483,3 +483,9 @@ button:disabled {
   display: none !important;
   pointer-events: none !important;
 }
+/* Lock the app when maintenance is active */
+#app.locked {
+  pointer-events: none;  /* disables clicks */
+  opacity: 0.4;          /* dims the content */
+  user-select: none;     /* prevents text selection */
+}
