@@ -1,4 +1,4 @@
-<script>
+
 /* ======================================================
    Federation Wiki JS - Fixed for Syntax / IDs Only
    ====================================================== */
@@ -258,4 +258,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
-</script>
