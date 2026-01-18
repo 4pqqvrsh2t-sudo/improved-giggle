@@ -250,7 +250,16 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- Admin Bypass ---
-bypassBtn.addEventListener('click', () => {
+  bypassBtn.addEventListener('click', () => {
+  console.log('BYPASS CLICKED');
+
+  maintenance.remove(); // ← physically removes it from the DOM
+
+  app.style.display = 'flex';
+  app.style.pointerEvents = 'auto';
+
+  document.body.style.overflow = 'auto';
+});
   // Fully remove the maintenance overlay
   maintenance.classList.add('hidden');
   maintenance.style.pointerEvents = 'none';
@@ -260,5 +269,4 @@ bypassBtn.addEventListener('click', () => {
 
   // Safety: unlock scrolling
   document.body.style.overflow = 'auto';
-});
 });
