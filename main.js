@@ -217,85 +217,41 @@ if(addTabBtn) addTabBtn.addEventListener('click', ()=>{
 PAGES = loadPagesFromStorage();
 if(PAGES.length>0) loadPage(PAGES[0].id);
 /* ======================================================
-   Maintenance Page Logic (Phase 1)
+   Maintenance Page Logic (Final, Single Source of Truth)
    ====================================================== */
-
 document.addEventListener('DOMContentLoaded', () => {
+  const maintenance = document.getElementById('maintenance');
   const retryBtn = document.getElementById('retryAccess');
+  const bypassBtn = document.getElementById('adminBypass');
   const spinner = document.getElementById('retrySpinner');
   const message = document.getElementById('maintenanceMessage');
-  const bypassBtn = document.getElementById('adminBypass');
+  const app = document.getElementById('app');
 
-  if (!retryBtn || !spinner || !message || !bypassBtn) {
-    console.warn('Maintenance elements missing');
-    return;
-  }
+  if (!maintenance || !retryBtn || !bypassBtn) return;
 
+  // --- Retry Button ---
   retryBtn.addEventListener('click', () => {
     retryBtn.disabled = true;
     bypassBtn.disabled = true;
 
-    spinner.style.display = 'block';
-    message.textContent = 'Re-establishing secure connection...';
+    if (spinner) spinner.style.display = 'block';
+    if (message)
+      message.textContent = 'Re-establishing secure connection...';
 
     setTimeout(() => {
-      spinner.style.display = 'none';
+      if (spinner) spinner.style.display = 'none';
       retryBtn.disabled = false;
       bypassBtn.disabled = false;
-      message.textContent =
-        'Connection failed. Network interference persists.';
+
+      if (message)
+        message.textContent =
+          'Connection failed. Network interference persists.';
     }, 2500);
   });
-});
-
-  // --- Retry Button ---
-  if (retryBtn) {
-    retryBtn.addEventListener('click', () => {
-      retryBtn.disabled = true;
-      retryBtn.textContent = 'Reconnecting...';
-
-      // Simulated reconnect delay
-      setTimeout(() => {
-        location.reload();
-      }, 1500);
-    });
-  }
 
   // --- Admin Bypass ---
-  if (bypassBtn) {
-    bypassBtn.addEventListener('click', () => {
-      maintenance.style.display = 'none';
-
-      const app = document.getElementById('app');
-      if (app) app.style.display = 'block';
-    });
-  }
-  const retryBtn = document.getElementById('retryAccess');
-const spinner = document.getElementById('retrySpinner');
-const message = document.getElementById('maintenanceMessage');
-const bypassBtn = document.getElementById('adminBypass');
-
-retryBtn.addEventListener('click', () => {
-  // Disable interaction
-  retryBtn.disabled = true;
-  bypassBtn.disabled = true;
-
-  // Show spinner
-  spinner.style.display = 'block';
-
-  // Update message
-  message.textContent = 'Re-establishing secure connection...';
-
-  // Simulate network check
-  setTimeout(() => {
-    // ❌ FAILURE CASE (for now)
-    spinner.style.display = 'none';
-    retryBtn.disabled = false;
-    bypassBtn.disabled = false;
-
-    message.textContent =
-      'Connection failed. Network interference persists.';
-  }, 2500);
-});
-
+  bypassBtn.addEventListener('click', () => {
+    maintenance.style.display = 'none';
+    if (app) app.style.display = 'block';
+  });
 });
