@@ -249,4 +249,32 @@ document.addEventListener('DOMContentLoaded', () => {
       if (app) app.style.display = 'block';
     });
   }
+  const retryBtn = document.getElementById('retryAccess');
+const spinner = document.getElementById('retrySpinner');
+const message = document.getElementById('maintenanceMessage');
+const bypassBtn = document.getElementById('adminBypass');
+
+retryBtn.addEventListener('click', () => {
+  // Disable interaction
+  retryBtn.disabled = true;
+  bypassBtn.disabled = true;
+
+  // Show spinner
+  spinner.style.display = 'block';
+
+  // Update message
+  message.textContent = 'Re-establishing secure connection...';
+
+  // Simulate network check
+  setTimeout(() => {
+    // ❌ FAILURE CASE (for now)
+    spinner.style.display = 'none';
+    retryBtn.disabled = false;
+    bypassBtn.disabled = false;
+
+    message.textContent =
+      'Connection failed. Network interference persists.';
+  }, 2500);
+});
+
 });
