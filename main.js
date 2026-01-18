@@ -260,13 +260,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.body.style.overflow = 'auto';
 });
-  // Fully remove the maintenance overlay
-  maintenance.classList.add('hidden');
-  maintenance.style.pointerEvents = 'none';
-
-  // Re-enable the app
-  app.style.display = 'flex';
-
-  // Safety: unlock scrolling
-  document.body.style.overflow = 'auto';
 });
