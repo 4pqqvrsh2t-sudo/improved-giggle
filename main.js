@@ -224,4 +224,39 @@ if(addTabBtn) addTabBtn.addEventListener('click', ()=>{
    ====================================================== */
 PAGES = loadPagesFromStorage();
 if(PAGES.length>0) loadPage(PAGES[0].id);
+/* ======================================================
+   Maintenance Page Logic (Phase 1)
+   ====================================================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+  const maintenance = document.getElementById('maintenance');
+  const retryBtn = document.getElementById('retryAccess');
+  const bypassBtn = document.getElementById('adminBypass');
+
+  if (!maintenance) return;
+
+  // --- Retry Button ---
+  if (retryBtn) {
+    retryBtn.addEventListener('click', () => {
+      retryBtn.disabled = true;
+      retryBtn.textContent = 'Reconnecting...';
+
+      // Simulated reconnect delay
+      setTimeout(() => {
+        location.reload();
+      }, 1500);
+    });
+  }
+
+  // --- Admin Bypass ---
+  if (bypassBtn) {
+    bypassBtn.addEventListener('click', () => {
+      maintenance.style.display = 'none';
+
+      const app = document.getElementById('app');
+      if (app) app.style.display = 'block';
+    });
+  }
+});
+
 </script>
