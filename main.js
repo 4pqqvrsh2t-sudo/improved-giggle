@@ -10,14 +10,6 @@ let PAGES = [];                   // Stores all pages, tabs, and sections
 let currentPageId = null;         // Tracks current page
 let editorState = null;           // Tracks editor modal state
 let codeMode = false;             // Tracks if editor is in code mode
-// Grab the maintenance element
-const maintenance = document.getElementById('maintenance');
-
-// Show maintenance automatically when the page loads
-window.addEventListener('load', () => {
-    maintenance.style.display = 'block';
-});
-
 /* ======================================================
    2. Utility Functions
    ====================================================== */
