@@ -221,11 +221,32 @@ if(PAGES.length>0) loadPage(PAGES[0].id);
    ====================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  const maintenance = document.getElementById('maintenance');
   const retryBtn = document.getElementById('retryAccess');
+  const spinner = document.getElementById('retrySpinner');
+  const message = document.getElementById('maintenanceMessage');
   const bypassBtn = document.getElementById('adminBypass');
 
-  if (!maintenance) return;
+  if (!retryBtn || !spinner || !message || !bypassBtn) {
+    console.warn('Maintenance elements missing');
+    return;
+  }
+
+  retryBtn.addEventListener('click', () => {
+    retryBtn.disabled = true;
+    bypassBtn.disabled = true;
+
+    spinner.style.display = 'block';
+    message.textContent = 'Re-establishing secure connection...';
+
+    setTimeout(() => {
+      spinner.style.display = 'none';
+      retryBtn.disabled = false;
+      bypassBtn.disabled = false;
+      message.textContent =
+        'Connection failed. Network interference persists.';
+    }, 2500);
+  });
+});
 
   // --- Retry Button ---
   if (retryBtn) {
