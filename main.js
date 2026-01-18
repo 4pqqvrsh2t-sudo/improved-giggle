@@ -229,42 +229,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!maintenance || !retryBtn || !bypassBtn) return;
 
-  // --- Show maintenance overlay on load ---
+  // Show maintenance overlay on load
   maintenance.style.display = 'flex';
   if (app) app.classList.add('locked');
 
-  // --- Retry Button ---
+  // Retry button
   retryBtn.addEventListener('click', () => {
     retryBtn.disabled = true;
     bypassBtn.disabled = true;
-
     if (spinner) spinner.style.display = 'block';
-    if (message)
-      message.textContent = 'Re-establishing secure connection...';
+    if (message) message.textContent = 'Re-establishing secure connection...';
 
     setTimeout(() => {
       if (spinner) spinner.style.display = 'none';
       retryBtn.disabled = false;
       bypassBtn.disabled = false;
-
-      if (message)
-        message.textContent =
-          'Connection failed. Network interference persists.';
+      if (message) message.textContent = 'Connection failed. Network interference persists.';
     }, 2500);
   });
 
-  // --- Admin Bypass ---
+  // Admin bypass
   bypassBtn.addEventListener('click', () => {
-    console.log('BYPASS CLICKED');
-
-    // Remove maintenance overlay
-    maintenance.remove();
-
-    // Unlock the app
-    if (app) app.classList.remove('locked');
-
-    // Restore scrolling
+    maintenance.style.display = 'none'; // hide overlay
+    if (app) {
+      app.classList.remove('locked');
+      app.style.pointerEvents = 'auto';
+    }
     document.body.style.overflow = 'auto';
   });
 });
-
